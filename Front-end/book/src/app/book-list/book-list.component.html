@@ -1,0 +1,86 @@
+<div class="container">
+    <h1>Books</h1>
+
+    <div>
+        <h2>Buscar por...</h2>
+        <form (ngSubmit)="searchBooks()" class="formulario">
+          <label>
+            Gênero:
+            <input [(ngModel)]="searchGenre" name="searchGenre">
+          </label>
+          <label>
+            Editora:
+            <input [(ngModel)]="searchPublisher" name="searchPublisher">
+          </label>
+          <label>
+            Idioma:
+            <input [(ngModel)]="searchLanguage" name="searchLanguage">
+          </label>
+          <button type="submit">Buscar</button>
+        </form>
+    </div>
+
+    <div>
+        <div *ngIf="showAddForm">
+            <h2>Adicionar livro</h2>
+            <form (ngSubmit)="addBook()" class="formulario">
+                <label>
+                    Gênero:
+                    <input [(ngModel)]="newBook.genre" name="genre" required>
+                </label>
+                <label>
+                    Editora:
+                    <input [(ngModel)]="newBook.publisher" name="publisher" required>
+                </label>
+                <label>
+                    Idioma:
+                    <input [(ngModel)]="newBook.language" name="language" required>
+                </label>
+                <button type="submit">Adicionar</button>
+                <button type="button"(click)="cancelAddBook()">Cancelar</button>
+            </form>
+        </div>
+    </div>
+
+    <div *ngIf="bookSelecionado">
+        <h2>Editar livro</h2>
+        <form (ngSubmit)="saveEditBook()" class="formulario">
+            <label>
+                Gênero:
+                <input [(ngModel)]="bookSelecionado.genre" name="editGenre" required>
+            </label>
+            <label>
+                Editora:
+                <input [(ngModel)]="bookSelecionado.publisher" name="editPublisher" required>
+            </label>
+            <label>
+                Idioma:
+                <input [(ngModel)]="bookSelecionado.language" name="editLanguage" required>
+            </label>
+            <button type="submit">Salvar</button>
+            <button type="button" (click)="cancelEditBook()">Cancelar</button>
+        </form>
+    </div>
+
+    <div *ngIf="books.length > 0" class="lista">
+        <div class="formulario_adicionar">
+            <h2>Lista de livros</h2>
+            <button *ngIf="!showAddForm" (click)="startAddBook()" class="botao_add_livro">Adicionar livro</button>
+        </div>
+        
+        <ul>
+            <li *ngFor="let book of books">
+                {{ book.genre }} - {{ book.publisher }} - {{ book.language }}
+                <div class="botoes">
+                    <div class="botao_editar">
+                        <button (click)="startEditBook(book)">Editar</button>
+                    </div>
+
+                    <div>
+                        <button (click)="deleteBook(book.id)">Apagar</button>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

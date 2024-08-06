@@ -1,0 +1,140 @@
+{
+	"info": {
+		"_postman_id": "a4a5546e-6aac-4558-a70d-ed6b89cd4e02",
+		"name": "Book",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37387495"
+	},
+	"item": [
+		{
+			"name": "Create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"genre\": \"genrero\",\r\n    \"publisher\": \"editora\",\r\n    \"language\": \"idioma\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/book",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"book"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/book",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"book"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"genre\": \"Genero\",\r\n    \"publisher\": \"Editora\",\r\n    \"language\": \"Idioma\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/book/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"book",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/book/{id}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"book",
+						"{id}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/book/search?genre=g&publiser=editora&language=portugues",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"book",
+						"search"
+					],
+					"query": [
+						{
+							"key": "genre",
+							"value": "g"
+						},
+						{
+							"key": "publiser",
+							"value": "editora"
+						},
+						{
+							"key": "language",
+							"value": "portugues"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
