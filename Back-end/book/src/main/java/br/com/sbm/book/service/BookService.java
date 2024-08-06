@@ -72,7 +72,7 @@ public class BookService {
         	pstm.setString(2, book.getPublisher());
         	pstm.setString(3, book.getLanguage());
         	pstm.setLong(4, id);
-        	pstm.executeUpdate();
+
         	int rowsAffected = pstm.executeUpdate();
             if (rowsAffected > 0) {
                 book.setId(id);
