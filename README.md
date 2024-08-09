@@ -29,12 +29,12 @@ https://github.com/user-attachments/assets/c7b77202-0d1a-46fb-b336-2e4eb6c9f3a3
 ##
 
 ### Inserindo dados no MySQL:
-Antes de iniciar o Back-end, é preciso criar o database books no MySQL. Depois de iniciar o Back-end, será criada a tabela book nesse database.
+Antes de iniciar o Back-end, é preciso criar o database book e a tabela book no MySQL. Depois de iniciar o Back-end, será criada a tabela book nesse database.
 
 ##
 
 ### Iniciando o Back-end:
-Depois de baixar o código para a sua máquina e criar o database no MySQL, importe o projeto do Back-end e execute-o para inciar o Back-end.
+Depois de baixar o código para a sua máquina e criar o database e tabela no MySQL, importe o projeto do Back-end e execute-o para inciar o Back-end.
 
 ##
 
